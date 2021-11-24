@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My first Web application</title>
+</head>
+<body>
+    <h1>The web site</h1>
+    <p><a href="http://127.0.0.1:8080/hello">Greet the world!</a></p>
+
+    <form action="http://127.0.0.1:8080/hello1" method="GET" id="nameForm">
+        <div>
+            <label for="nameField">How should the app call you?</label>
+            <input name="myName" id="nameField">
+            <button>Greet me!</button>
+        </div>
+    </form>
+
+
+    <form action="http://127.0.0.1:8080/sum" method="GET" id="nameForm">
+        <div>
+
+            <p><label for="nameField">Enter Number 1</label>
+                <input name="number1" id="nameField"></p>
+            <p><label for="nameField">Enter Number 2</label>
+            <input name="number2" id="nameField"></p>
+            <button>Calculate SUM</button>
+        </div>
+    </form>
+
+    <p><a href="http://127.0.0.1:8080/easygame">Click to play an easy game!</a></p>
+
+    <form action="http://127.0.0.1:8080/register" method="GET" id="nameForm">
+        <div>
+            <p><label for="name">Enter Instructor Name</label>
+                <input name="name" id="nameField"></p>
+            <p><label for="family">Enter Instructor Family</label>
+                <input name="family" id="nameField"></p>
+            <button>Register new Instructor</button>
+        </div>
+    </form>
+
+    <form action="http://127.0.0.1:8080/registerstudent" method="GET" id="nameForm">
+        <div>
+            <p><label for="name">Enter Student Name</label>
+                <input name="name" id="nameField"></p>
+            <p><label for="family">Enter Student Family</label>
+                <input name="family" id="nameField"></p>
+            <p><label for="codemelli">Enter Student Codemelli</label>
+                <input name="codemelli" id="nameField"></p>
+            <p><label for="sn">Enter Student Number</label>
+                <input name="sn" id="nameField"></p>
+            <button>Register new Student</button>
+        </div>
+    </form>
+
+</body>
+</html>
