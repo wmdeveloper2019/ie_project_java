@@ -15,6 +15,8 @@ public class EduService {
     public EduService(IEDatabaseManager ie){
         this.ie = ie;
     }
+
+
     public String registerService(String name, String family) {
         return  ie.registerInstructor(new Instructor(name,family));
     }

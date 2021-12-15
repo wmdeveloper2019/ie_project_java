@@ -13,6 +13,7 @@ public class EduConroller {
 
     @Autowired
     public EduConroller(EduService es){
+
         this.es = es;
     }
 

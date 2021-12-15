@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -45,6 +44,31 @@ public class IEDatabaseManager {
              Statement stmt = conn.createStatement();
         ) {
             stmt.executeUpdate(newstudent.getRegisterQuery());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "There is an internal error :( call administrator.";
+        }
+        return "The student inserted successfully!!!";
+    }
+
+    public String choseCourse(Student newstudent) {
+        try (Connection conn = DriverManager.getConnection(url,user,pass);
+             Statement stmt = conn.createStatement();
+        ) {
+            stmt.executeUpdate(newstudent.getRegisterQuery());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "There is an internal error :( call administrator.";
+        }
+        return "The student inserted successfully!!!";
+    }
+
+    public String seeCourse() {
+        try (Connection conn = DriverManager.getConnection(url,user,pass);
+             Statement stmt = conn.createStatement();
+        ) {
+            stmt.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
             return "There is an internal error :( call administrator.";
