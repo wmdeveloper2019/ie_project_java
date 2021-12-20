@@ -4,14 +4,15 @@ import com.example.demo.model.Course;
 import com.example.demo.model.courseRequest;
 import com.example.demo.model.Instructor;
 import com.example.demo.model.Student;
+import com.sun.java.util.jar.pack.DriverResource;
+import com.sun.org.apache.bcel.internal.util.ClassPath;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 @Service
 @Lazy
@@ -69,9 +70,11 @@ public class IEDatabaseManager {
 
     public ArrayList<Course> getCourse(){
         ArrayList<Course> courseTable = new ArrayList<Course>();
-
-        try (
-             Connection conn = DriverManager.getConnection(url,"root","");
+       // ClassPath.getClassPath("/com/example/demo/service/com.mysql.jdbc.Driver");
+        try (//DriverResource("com.mysql.jdbc.Driver");//DriverManager.getDriver("");
+             //Class.forName("com.mysql.jdbc.Driver");
+             //java.sql.DriverManager.registerDriver ("com.mysql.jdbc.Driver");
+             Connection conn =DriverManager.getConnection(url,"root","");
              Statement stmt = conn.createStatement();
         ) {
             String sql = "SELECT * FROM courses;";
